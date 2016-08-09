@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<!-- 使用UTF-8编码 -->
+	<meta charset="UTF-8">
+	<!-- 以最新的IE版本模式来显示网页 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 标题 -->
+	<title>已发布会议</title>
+	<!-- CSS -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!-- font-awesome -->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<!-- Style -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 页面顶部开始 -->
+	<div class="docInput-top">
+		<ol class="breadcrumb">
+			<li><a href="index_1.html"><i class="icon-home"></i> 首页</a></li>
+		  <li class="active"> 已发布会议</li>
+		</ol>
+	</div>
+	<!-- 页面顶部结束 -->
+
+	<!-- 表单开始 -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+  			<form class="form-horizontal">
+				  <div class="form-group"> 
+				    <label for="docCompany6" class="col-xs-6 control-label">等    &nbsp; &nbsp; &nbsp; &nbsp;级：</label>
+				    <div class="col-xs-6">
+				    	<select class="form-control" id="level1">
+			  				  <option>特级</option>
+							  <option>高级</option>
+			  			</select>
+				    </div>
+				  </div>
+				</form>
+  		</div>	
+  		<div class="col-md-4">
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="docNumber6" class="col-xs-6 control-label">发文编号：</label>
+							<div class="col-xs-6">
+				    		<input type="text" class="form-control" id="docNumber6">
+				    	</div>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="docTitle6" class="col-xs-6 control-label">文件标题：</label>
+							<div class="col-xs-6">
+				    		<input type="text" class="form-control" id="docTitle6">
+				    	</div>
+				  </div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="startTime6" class="col-xs-6 control-label">开始时间：</label>
+							<div class="col-xs-6">
+				    		<input type="date" class="form-control" id="startTime6">
+				    	</div>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="endTime6" class="col-xs-6 control-label">结束时间：</label>
+							<div class="col-xs-6">
+				    		<input type="date" class="form-control" id="endTime6">
+				    	</div>
+				  </div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-default btn-block pull-right"><strong>查 询</strong></button>
+			</div>
+		</div>
+	</div>
+	<!-- 表单结束 -->
+
+	<!-- 表格开始 -->
+	<table class="table table-bordered table-hover">
+  	<th>
+  		<td>发布时间</td>
+  		<td>发文编号</td>
+  		<td>文件标题</td>
+  		<td>发文单位</td>
+		<td>承办单位</td>
+  		<td>内容</td>
+  		<td>已签收/应签收</td>
+		<td>操作</td>
+		<td>已发布会议审批</td>
+  		<td>等级</td>
+  	</th>
+  	<tr>
+  		<td>1</td>
+  		<td>2016/05/10</td>
+  		<td>ABCDEFG1</td>
+  		<td>1234123123123</td>
+  		<td>12123123</td>
+  		<td>阳明</td>
+  		<td><a href="meetcontent.html">查看</a></td>
+  		<td>0/6</td>
+		<td><a href="sign.html">催收</a></td>
+		<td><a href="shenpi.html">审批</a></td>
+  		<td>特级</td>
+  	</tr>
+  	<tr>
+  		<td>2</td>
+  		<td>2016/05/12</td>
+  		<td>ABCDEFG2</td>
+  		<td>124123413</td>
+  		<td>12341241</td>
+  		<td>阳明</td>
+  		<td><a href="meetcontent.html">查看</a></td>
+  		<td>2/6</td>
+		<td><a href="sign.html">催收</a></td>
+		<td><a href="shenpi.html">审批</a></td>
+  		<td>特级</td>
+  	</tr>
+	</table>
+	<!-- 表格结束 -->
+
+
+	<!-- JavaScript -->
+	<!-- JQuery 1.9 (为了兼容IE8，使用低版本JQuery) -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- Respond.js (为了使Bootstrap响应式兼容IE8) -->
+	<script type="text/javascript" src="js/respond.js"></script>
+	<!-- html5shiv.js (为了能在IE8中使用HTML5) -->
+	<script type="text/javascript" src="js/html5shiv.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<meta charset="utf-8">
+<title>浙江省公文传输系统</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-table.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/zTreeStyle.css">
+<link rel="stylesheet" type="text/css" href="css/ztree.css">
+<!-- The styles -->
+<style type="text/css">
+</style>
+
+</head>
+
+<body>
+	
+
+<div class="zhu-top">
+	<div class="zhu-topm">
+		<span class="zhu-topmb">公文传输系统</span>
+
+		<ul class="list-inline">
+			<li><a class="btn btn-link btn-lg" href="##"><i class="icon-user"></i><span id="user_name"></span> </a><span>欢迎您！</span></li>
+			
+				<li><a class="btn btn-link btn-lg" href="http://localhost:8090/OA_console/sys/index"><i class="icon-cog"></i>
+						系统管理</a></li>
+			
+			<li><a class="btn btn-link btn-lg" href="http://localhost:8090/OA_console/logout"><i class="icon-reply"></i> 退出</a></li>
+		</ul>
+	</div>
+</div>
+
+
+	
+<div class="col-lg-2 index-left">
+	<br>
+	<!-- 页面左侧链接组开始 -->
+	<div class="list-group">
+		<a class="list-group-item" href="http://localhost:8090/OA_console/home/index"><i class="icon-chevron-right"></i> 首页</a> <a class="list-group-item" href="http://localhost:8090/OA_console/doc/docInputIndex"><i class="icon-chevron-right"></i> 公文发布</a> <a class="list-group-item" href="http://localhost:8090/OA_console/doc/docReceiveIndex"><i class="icon-chevron-right"></i> 公文接收</a> <a class="list-group-item" href="http://localhost:8090/OA_console/doc/docIndex"><i class="icon-chevron-right"></i>
+			已发布公文</a> <a class="list-group-item" href="http://localhost:8090/OA_console/meet/meetInputIndex"><i class="icon-chevron-right"></i> 会议发布</a> <a class="list-group-item" href="http://localhost:8090/OA_console/meet/meetReceiveIndex"><i class="icon-chevron-right"></i> 会议接收</a> <a class="list-group-item" href="http://localhost:8090/OA_console/meet/meetIndex"><i class="icon-chevron-right"></i>
+			已发布会议</a> 
+			<a class="list-group-item" href="http://localhost:8090/OA_console/meet/meetCompanyIndex"><i class="icon-chevron-right"></i>
+			会议承办</a> 
+			
+			<a class="list-group-item" href="http://localhost:8090/OA_console/doc/docAuditIndex"><i class="icon-chevron-right"></i> 公文审计</a> <a class="list-group-item" href="http://localhost:8090/OA_console/meet/meetAuditIndex"><i class="icon-chevron-right"></i> 会议审计</a>
+			
+	</div>
+	<!-- 页面左侧链接组结束 -->
+</div>
+
+	
+	<div class="col-lg-10 index-iframe">
+	<div class="docInput-top">
+		<ol class="breadcrumb">
+			<li><a href="http://localhost:8090/OA_console/home/index"><i class="icon-home"></i> 首页</a></li>
+		  <li class="active"> 公文发布<span style="display: none; width: 0px; height: 0px;" id="transmark"></span></li>
+		</ol>
+	</div>
+	<!-- 页面顶部结束 -->
+	
+	<!-- 表格开始 -->
+	<div class="container-fluid">
+	<div class="row">
+				<div class="col-md-12 tab-caption">发 布 公 文</div>
+			</div>
+	<div class="row">
+	<div class="col-md-9 col-sm-9">
+		<form novalidate="novalidate" id="docform" action="/OA_console/doc/docSend" method="post" enctype="multipart/form-data">
+	  	    <div class="row">
+				<div class="col-md-2">
+					<strong class="pull-right">接收单位：</strong>
+				</div>
+				<div class="col-md-10">
+					<div id="jsdwText" class="jsdwText">
+
+					</div>
+				</div>
+				<hr>
+			</div>
+			<hr>
+	
+			<div class="row">
+				<div class="col-md-4">
+						<div class="form-horizontal">
+						  <div class="form-group">
+						    <label for="level" class="col-xs-6 control-label">等&nbsp; &nbsp; &nbsp; &nbsp;级：</label>
+						    <div class="col-xs-6">
+							    <select class="form-control" id="level" name="level">
+							        <option selected="selected" value=""></option>
+					  				<option value="1">特急</option>
+									<option value="2">加急</option>
+									<option value="3">平急</option>
+									<option value="4">特提</option>
+					  			</select>
+					  		</div>
+						  </div>
+						</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-horizontal">
+					  <div class="form-group">
+					    <label for="docNumber1" class="col-xs-5 control-label">发文编号：</label>
+								<div class="col-xs-7">
+					    		<input class="form-control" id="docNo" name="docNo" type="text">
+					    	</div>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-horizontal">
+						<div class="form-group">
+						<label for="docTitle1" class="col-xs-5 control-label">文件标题：</label>
+							<div class="col-xs-7">
+								<input class="form-control" id="docTitle" name="docTitle" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+	
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-horizontal">
+					  <div class="form-group">
+					    <label for="docSummary1" class="col-md-2 control-label">发文摘要：</label>
+								<div class="col-md-10">
+					    		<textarea class="form-control" id="docSummary" name="docSummary"></textarea>
+					    	</div>
+							
+					  </div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-2">
+					<strong class="pull-right">上传文件：</strong>
+				</div>
+				<div class="col-md-10">
+					<div class="btn btn-default" id="btn_add1"><b>添加附件</b></div>
+					<div class="btn btn-default"><b>扫描</b></div>
+				</div>
+				<hr>
+				<div id="fj" class="col-md-10 col-md-offset-2">
+				<div id="fjdiv_1"><div class="col-md-4"><input name="upfile" type="file"></div><div class="col-md-2"><div class="btn btn-default" onclick="del_1(1)"><b>删除</b></div></div></div></div>
+			</div>
+	
+			<div class="row">
+				<div class="col-md-10 col-md-offset-2">
+					<br>
+					<button type="submit" class="btn btn-default btn-lg"><strong>发 送</strong></button>
+				</div>
+			</div>
+			</form>
+		</div>
+		<div class="col-md-3 col-sm-3 treeBox">
+
+			<div class="treebox">
+				<div class="treesearch">
+					<div class="input-group">
+						<input type="text" class="form-control" id="bmvalue" placeholder="查找内容..">
+						<span class="input-group-btn">
+							<button class="btn btn-default" id="bmsearch" type="button">查找</button>
+						</span>
+					</div>
+					<div id="treesearchtext" class="treesearch-text">
+
+					</div>
+				</div>
+				<div class="title">
+					常用单位
+				</div>
+				<div id="cydw" class="content cydw">
+					<div id="a">
+						常用单位1
+					</div>
+					<div id="b">
+						常用单位2
+					</div>
+					<div id="c">
+						常用单位3
+					</div>
+				</div>
+				<div class="title">
+					全部单位
+				</div>
+				<div class="content">
+
+					<div style="-moz-user-select: none;" id="ztreeBox" class="ztree">
+						<li id="ztreeBox_1" class="level0" tabindex="0" hidefocus="true" treenode="">
+							<span id="ztreeBox_1_switch" title="" class="button level0 switch roots_docu" treenode_switch=""></span>
+							<a id="ztreeBox_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="管理员单位">
+								<span id="ztreeBox_1_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span>
+								<input type="checkbox" value="">
+								<span id="ztreeBox_1_span" class="node_name">管理员单位</span>
+							</a>
+						</li>
+						<li id="ztreeBox_2" class="level0" tabindex="0" hidefocus="true" treenode="">
+							<span id="ztreeBox_2_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span>
+							<a id="ztreeBox_2_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="省委办公厅">
+								<span id="ztreeBox_2_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span>
+								<input type="checkbox" value="">
+								<span id="ztreeBox_2_span" class="node_name">省委办公厅</span>
+							</a>
+						</li>
+						<li id="ztreeBox_3" class="level0" tabindex="0" hidefocus="true" treenode="">
+							<span id="ztreeBox_3_switch" title="" class="button level0 switch center_docu" treenode_switch=""></span>
+							<a id="ztreeBox_3_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="省委机要局">
+								<span id="ztreeBox_3_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span>
+								<input type="checkbox" value="">
+								<span id="ztreeBox_3_span" class="node_name">省委机要局</span>
+							</a>
+						</li>
+						<li id="ztreeBox_4" class="level0" tabindex="0" hidefocus="true" treenode="">
+							<span id="ztreeBox_4_switch" title="" class="button level0 switch bottom_docu" treenode_switch=""></span>
+							<a id="ztreeBox_4_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="省信访局">
+								<span id="ztreeBox_4_ico" title="" treenode_ico="" class="button ico_docu" style="width:0px;height:0px;"></span>
+								<input type="checkbox" value="">
+								<span id="ztreeBox_4_span" class="node_name">省信访局</span>
+							</a>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="alert"></div>
+	</div>
+	
+<!-- IE8 -->
+<script type="text/javascript" src="js/jquery_003.js"></script>
+<script type="text/javascript" src="js/jquery_002.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/formhelper.js"></script>
+
+<!-- Bootstrap -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- Respond.js (为了使Bootstrap响应式兼容IE8) -->
+<script type="text/javascript" src="js/respond.js"></script>
+<!-- html5shiv.js (为了能在IE8中使用HTML5) -->
+<script type="text/javascript" src="js/html5shiv.js"></script>
+
+<script type="text/javascript" src="js/bootstrap-table.js"></script>
+
+<script type="text/javascript" src="js/common.js"></script>
+<!-- z-tree -->
+<script type="text/javascript" src="js/ztree.js"></script>
+<!--  -->
+<script type="text/javascript" src="js/jquery_004.js"></script>
+
+<script type="text/javascript" src="js/alerty.js"></script>
+
+<script type="text/javascript">
+var i = 1;
+$("#docform").validate({
+	errorPlacement : function(error, element) {
+		error.replaceAll($("#" + $(element).attr("name") + "-error"));
+	},
+	rules : {
+		docTitle : {
+			required : true,
+		}
+	},
+	messages : {
+		docNo : {
+			required : true,
+		},
+		docTitle : {
+			required : true,
+		},
+		docSummary : {
+			required : true,
+		}
+	},
+	/* success : function(label) {
+		label.text("").addClass("valid");
+		label.removeClass("error");
+		label.html("有效");
+		return false;
+	}, */
+	submitHandler : function() {
+		ajaxSubmit(docform,alert);
+	}
+});
+
+function del_1(o){
+	document.getElementById("fj").removeChild(document.getElementById("fjdiv_"+o));
+}
+
+	$("#cydw div").on("click",function(){
+		var id = $(this).attr("id");
+		var text = $(this).text();
+		var flag = judgeExist($("#jsdwText input"),id);
+		if(!flag){
+			var html = insertSelectedDw(id,text);
+			$("#jsdwText").append(html.join(''));
+			if($("#jsdwText").children().length >= 1){
+				$("button[class='close']").on("click",function(e){
+					$(this).parent().remove();
+				});
+			}
+		}
+	});
+
+	$("#treesearchtext div").on("click",function(){
+		var id = $($(this)+'input').attr("id");
+		var text = $(this).text();
+		var flag = judgeExist($("#jsdwText input"),id);
+		if(!flag){
+			var html = insertSelectedDw(id,text);
+			$("#jsdwText").append(html.join(''));
+			if($("#jsdwText").children().length >= 1){
+				$("button[class='close']").on("click",function(e){
+					$(this).parent().remove();
+				});
+			}
+		}
+	});
+	var setting = {
+		view: {
+			showIcon: false
+		},
+		data: {
+			simpleData: {
+				enable: true
+			}
+		},
+		callback: {
+			onClick:function(event,treeId,treeNode){
+				var flag = judgeExist($("#jsdwText input"),treeNode.id);
+				if(!flag){
+					var html = insertSelectedDw(treeNode.id,treeNode.name);
+					$("#jsdwText").append(html.join(''));
+					if($("#jsdwText").children().length >=1){
+						$("button[class='close']").on("click",function(e){
+							$(this).parent().remove();
+							isFlag = true;
+						});
+					}
+				}
+			}
+		}
+	};
+	var ztreeObj;
+	$(document).ready(function(){
+		$.post('/OA_console/sys/getOrganizationTreeData',{},function(data){
+			ztreeObj = $.fn.zTree.init($("#ztreeBox"), setting, data.data);
+		},"json");
+		$("#btn_add1").click(function(){
+			$("#fj").append('<div id="fjdiv_'+i+'"><div class="col-md-4"><input  type="file" name="upfile" /></div><div class="col-md-2"><div class="btn btn-default" onclick="del_1('+i+')"><b>删除</b></div></div></div>');
+					  i = i + 1;
+			});
+		$("#btn_add1").click();
+	}); 
+</script>
+
+
+</body></html>
